@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Campaña por Navidad</title>
+</head>
+<body>
+    <header>
+        <ul class="menu-ul">
+            <li class="menu-li"><a class="active" href="/index.html">INICIO</a></li>
+            <li class="menu-li"><a href="/contacto.html">CONTACTOS</a></li>
+        </ul>
+    </header>
+  <h1>CALCULADORA DE PRECIOS</h1>
+  <h3>En esta pagina web podras elegir los componentes que deseas en tu computadora sin ningun problema,
+    elige los componentes a tu gusto o al precio que te deses.
+    Para eso estamos para ayudarte a ti y que se te pueda hacer mas facil tener una computadora.
+    Así que !QUE ESTAS ESPERANDO¡ </h3>
+<main>
+    <!-- Primer dropdown list de productos -->
+    <label for="producto1">PROCESADOR:</label> 
+    <select class="Productos" id="producto1" name="producto1">
+        <option value="0">Selecciona una opcion</option>
+        <option value="10">CPU INTEL LGA 1200 CELERON G5900 TRAY 2x3,4 58W BULK ($10)</option>
+        <option value="20">PROCESADOR AMD RYZEN 5 3600 3.6GHZ 35MB 4CORE AM4 (PN: 100-100000031BOX )($20)</option>
+        <option value="30">PROCESADOR INTEL CORE I3-10105F 3.70GHz/6MB LGA1200 (PN:BX8070110105F)($30)</option>
+    </select>
+    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto2">PLACA BASE:</label>
+    <select class="Productos" id="producto2" name="producto2">
+        <option value="0">Selecciona una opción</option>
+        <option value="10">PLACA ASROCK B560M-HDV DDR4 LGA 1200 (PN:90-MXBF50-A0UAYZ)($10)</option>
+        <option value="20">PLACA ASUS PRIME B560M-A DDR4 LGA 1200 (PN:90MB17A0-M0EAY0)($20)</option>
+        <option value="30">PLACA BOETEC H75 INTEL DDR3 LGA 1155($30)</option>
+    </select>
+    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto3">MEMORIA RAM:</label>
+    <select class="Productos" id="producto3" name="producto3">
+        <option value="0">Selecciona una opción</option>
+        <option value="10">MEMORIA 64GB (2x32GB) DDR4 CORSAIR VENGEANCE RGB RT WHITE BUS 3200MHz (PN:CMN64GX4M2Z3200C16W)($10)</option>
+        <option value="20">MEMORIA 16GB DDR4 BOETEC VIPER BUS 3200Mhz CON DISIPADOR($20)</option>
+        <option value="30">MEMORIA 8GB DDR5 KINGSTON FURY BEAST BLACK BUS 5200MHz (PN:KF552C40BB-8)($30)</option>
+    </select>
+    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto4">DISCO DURO:</label>
+    <select class="Productos" id="producto4" name="producto4">
+        <option value="0">Selecciona una opción</option>
+        <option value="10">DISCO DURO 1TB WESTERN DIGITAL BLUE SATA3 (PN:WD10EZEX)($10)</option>
+        <option value="20">DISCO DURO 4TB WD BLUE SATA3 (PN:WD40EZRZ)($20)</option>
+        <option value="30">DISCO DURO 2TB SEAGATE BARRACUDA SATA3 (PN:ST2000DM008)($30)</option>
+    </select>
+    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto5">GABINETE:</label>
+    <select class="Productos" id="producto5" name="producto5">
+        <option value="0">Selecciona una opción</option>
+        <option value="10">CASE ANTRYX XS-110 MICRO SLIM XTREME BLACK CON FUENTE 350W USB 3.0/USB 2.0($10)</option>
+        <option value="20">CASE DEEPCOOL CG540 ARGB BLACK SIN FUENTE VIDRIO TEMPLADO USB 3.0 (PN:R-CG540-BKAGE4-G-1)($20)</option>
+        <option value="30">CASE DEEPCOOL MATREXX 40 3FS SIN FUENTE VIDRIO TEMPLADO USB 3.0/USB 2.0 (PN:DP-MATX-MATREXX40-3FS)($30)</option>
+    </select>
+    <br>
+    <!-- Segundo dropdown list de productos -->
+    <label for="producto6">VENTILADOR CPU:</label>
+    <select class="Productos" id="producto6" name="producto6">
+        <option value="0">Selecciona una opción</option>
+        <option value="10">VENTILADOR FAN PARA CHASIS CAJA DE ORDENADOR PC TORRE - 60x10mm - CONECTOR TX3($10)</option>
+        <option value="20">VENTILADOR FAN DISIPADOR CPU PROCESADOR CORE 2 DUO PENTIUM 4 SOCKET 775 TX3 95mm($20)</option>
+        <option value="30">VENTILADOR DE REPUESTO PARA DISIPADOR DE PROCESADOR O CAJA CHASIS ORDENADOR - 70mm - TX3($30)</option>
+    </select>
+    <br>
+    <label for="total">Total:</label>
+    <input type="text" id="total" name="total" value="$0" readonly>
+
+<script>
+    // Obtener los elementos select y input
+        const producto1 = document.getElementById('producto1');
+        const producto2 = document.getElementById('producto2');
+        const producto3 = document.getElementById('producto3');
+        const producto4= document.getElementById('producto4');
+        const producto5 = document.getElementById('producto5');
+        const producto6 = document.getElementById('producto6');
+        const total = document.getElementById('total');
+
+        // Agregar un evento change a cada uno de los elementos select
+        producto1.addEventListener('change', calcularTotal);
+        producto2.addEventListener('change', calcularTotal);
+        producto3.addEventListener('change', calcularTotal);
+        producto4.addEventListener('change', calcularTotal);
+        producto5.addEventListener('change', calcularTotal);
+        producto6.addEventListener('change', calcularTotal);
+
+        // Función para calcular el total
+        function calcularTotal() {
+        const precio1 = parseInt(producto1.value);
+        const precio2 = parseInt(producto2.value);
+        const precio3 = parseInt(producto3.value);
+        const precio4 = parseInt(producto4.value);
+        const precio5 = parseInt(producto5.value);
+        const precio6 = parseInt(producto6.value);
+        const suma = precio1 + precio2 + precio3 + precio4 + precio5 + precio6;
+
+        // Actualizar el valor del elemento input
+        total.value = `$${suma}`;
+        }
+</script>
+</main>
+</body>
+
+</html>

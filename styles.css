@@ -1,0 +1,33 @@
+.menu-ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #404750;
+  }
+    
+.menu-li {
+    float: left;
+  }
+    
+.menu-li a {
+    display: block;
+    color: rgb(253, 252, 252);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+    
+.menu-li a:hover {
+    background-color: #3f4853;
+  }
+
+.Productos {
+padding: 20px 20px;
+width: 96%;
+font-size: 18px;
+border: 6px solid #504e4e;
+margin-bottom: 30px;
+border-radius: 3px;
+outline: 0px;
+}
